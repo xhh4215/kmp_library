@@ -88,9 +88,8 @@ kotlin {
                 implementation(libs.androidx.nav3.ui)
                 implementation(libs.androidx.material3.adaptive)
                 implementation(libs.androidx.material3.adaptive.nav3)
-
-//                implementation(libs.androidx.paging.runtime)
-//                implementation(libs.androidx.paging.compose)
+                implementation(libs.androidx.paging.runtime)
+                implementation(libs.androidx.paging.compose)
 
             }
         }

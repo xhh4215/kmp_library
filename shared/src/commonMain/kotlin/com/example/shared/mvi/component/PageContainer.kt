@@ -3,6 +3,7 @@ package com.example.shared.mvi.component
 import androidx.compose.foundation.layout.Box
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.paging.compose.LazyPagingItems
 import com.example.shared.mvi.contract.BlockState
 import com.example.shared.mvi.contract.PageState
 import com.example.shared.mvi.contract.ShellState
@@ -51,5 +52,28 @@ fun <T> BlockContainer(
     }
 }
 
+
+@Composable
+fun <T : Any> PagingPageContainer(
+    pagingItems: LazyPagingItems<T>,
+    onRetry: () -> Unit,
+    content: @Composable (LazyPagingItems<T>) -> Unit,
+    loadingView: @Composable () -> Unit,
+    emptyView: @Composable (retryAction: () -> Unit) -> Unit,
+    errorView: @Composable (errorMessage: String, retryAction: () -> Unit) -> Unit
+) {
+    when (val status = pagingItems.toPageState()) {
+
+        PageState.Idle -> Unit
+
+        PageState.Loading -> loadingView()
+
+        PageState.Empty -> emptyView(onRetry)
+
+        is PageState.Error -> errorView(status.message, onRetry)
+
+        PageState.Success -> content(pagingItems)
+    }
+}
 
 
