@@ -42,6 +42,7 @@ kotlin {
             implementation("org.jetbrains.compose.components:components-resources:1.10.0")
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation(project(":shared"))
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

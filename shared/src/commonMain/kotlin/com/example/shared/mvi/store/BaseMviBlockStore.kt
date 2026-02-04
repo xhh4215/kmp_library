@@ -1,6 +1,6 @@
 package com.example.shared.mvi.store
 
-import com.example.shared.domain.data.DataResult
+import com.example.shared.mvi.domain.data.DataResult
 import com.example.shared.mvi.contract.MviEffect
 import com.example.shared.mvi.contract.MviIntent
 import com.example.shared.mvi.contract.MviState

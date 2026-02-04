@@ -32,7 +32,7 @@ open class BaseStore(
 
     /** 可选统一 retry */
     fun retry(key: String) {
-        (blocks[key] as? BlockController<Any>)?.retry()
+        blocks[key]?.retry()
     }
 
     /** 页面退出 / 生命周期结束 */

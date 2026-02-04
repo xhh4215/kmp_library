@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.androidLint)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlinx.serialization)
+
 }
 
 kotlin {
@@ -60,7 +62,9 @@ kotlin {
     // See: https://kotlinlang.org/docs/multiplatform-hierarchy.html
     sourceSets {
         commonMain {
+
             dependencies {
+                implementation(libs.compose.components.resources)
                 implementation(libs.kotlin.stdlib)
                 implementation(libs.ktor.core)
                 implementation(libs.ktor.logging)
@@ -77,11 +81,16 @@ kotlin {
                 implementation("org.jetbrains.compose.components:components-resources:1.10.0")
                 implementation(libs.androidx.lifecycle.viewmodelCompose)
                 implementation(libs.androidx.lifecycle.runtimeCompose)
-                implementation(libs.jetbrains.navigation3.ui)
-                implementation(libs.jetbrains.lifecycle.viewmodelNavigation3)
-                implementation(libs.jetbrains.material3.adaptiveNavigation3)
-                implementation(libs.androidx.paging.runtime)
-                implementation(libs.androidx.paging.compose)
+                implementation(libs.androidx.lifecycle.viewmodel)
+                implementation(libs.androidx.lifecycle.viewmodel.nav3)
+                implementation(libs.androidx.lifecycle.runtime)
+                implementation(libs.kotlinx.serialization.json)
+                implementation(libs.androidx.nav3.ui)
+                implementation(libs.androidx.material3.adaptive)
+                implementation(libs.androidx.material3.adaptive.nav3)
+
+//                implementation(libs.androidx.paging.runtime)
+//                implementation(libs.androidx.paging.compose)
 
             }
         }

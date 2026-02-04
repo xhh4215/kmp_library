@@ -1,6 +1,6 @@
 package com.example.shared.mvi.controller
 
-import com.example.shared.domain.data.DataResult
+import com.example.shared.mvi.domain.data.DataResult
 
 /***
  * 数据块描述
