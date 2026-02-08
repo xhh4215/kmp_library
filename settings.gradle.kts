@@ -1,4 +1,4 @@
-rootProject.name = "kmp_library"
+rootProject.name = "kmp-share"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
