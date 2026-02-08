@@ -14,7 +14,7 @@ kotlin {
     // which platforms this KMP module supports.
     // See: https://kotlinlang.org/docs/multiplatform-discover-project.html#targets
     androidLibrary {
-        namespace = "com.example.shared"
+        namespace = "com.luanxh.shared"
         compileSdk = 36
         minSdk = 24
 
@@ -37,11 +37,6 @@ kotlin {
     // https://developer.android.com/kotlin/multiplatform/migrate
     val xcfName = "sharedKit"
 
-    iosX64 {
-        binaries.framework {
-            baseName = xcfName
-        }
-    }
 
     iosArm64 {
         binaries.framework {
@@ -81,7 +76,7 @@ kotlin {
                 implementation("org.jetbrains.compose.components:components-resources:1.10.0")
                 implementation(libs.androidx.lifecycle.viewmodelCompose)
                 implementation(libs.androidx.lifecycle.runtimeCompose)
-                implementation(libs.androidx.lifecycle.viewmodel)
+                 implementation(libs.androidx.lifecycle.viewmodel)
                 implementation(libs.androidx.lifecycle.viewmodel.nav3)
                 implementation(libs.androidx.lifecycle.runtime)
                 implementation(libs.kotlinx.serialization.json)

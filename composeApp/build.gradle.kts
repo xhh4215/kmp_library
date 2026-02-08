@@ -1,4 +1,3 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -19,7 +18,6 @@ kotlin {
     }
 
     listOf(
-        iosArm64(),
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
@@ -42,7 +40,7 @@ kotlin {
             implementation("org.jetbrains.compose.components:components-resources:1.10.0")
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
-            implementation(project(":shared"))
+            api(project(":shared"))
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -51,11 +49,11 @@ kotlin {
 }
 
 android {
-    namespace = "com.example.kmp_library"
+    namespace = "com.luanxh.share.1"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.example.kmp_library"
+        applicationId = "com.luanxh.share.kmp"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
