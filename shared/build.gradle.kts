@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.kotlinx.serialization)
-
+    id("maven-publish")
 }
 
 kotlin {
@@ -76,7 +76,7 @@ kotlin {
                 implementation("org.jetbrains.compose.components:components-resources:1.10.0")
                 implementation(libs.androidx.lifecycle.viewmodelCompose)
                 implementation(libs.androidx.lifecycle.runtimeCompose)
-                 implementation(libs.androidx.lifecycle.viewmodel)
+                implementation(libs.androidx.lifecycle.viewmodel)
                 implementation(libs.androidx.lifecycle.viewmodel.nav3)
                 implementation(libs.androidx.lifecycle.runtime)
                 implementation(libs.kotlinx.serialization.json)
@@ -117,4 +117,16 @@ kotlin {
 
     }
 
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            from(components["kotlin"])
+
+            groupId = "ccom.luanxh.shared"
+            artifactId = "kmp-library"
+            version = "v1.0.3"
+        }
+    }
 }
