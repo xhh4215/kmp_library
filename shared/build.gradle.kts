@@ -124,7 +124,7 @@ publishing {
         create<MavenPublication>("release") {
             from(components["kotlin"])
 
-            groupId = "com.luanxh.shared"
+            groupId = "com.luanxh.share"
             artifactId = "kmp-library"
             version = "v1.0.3"
         }

@@ -49,7 +49,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.luanxh.share.1"
+    namespace = "com.luanxh.share"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
